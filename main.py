@@ -6,55 +6,32 @@
 
 import enum
 
-import baseCharacterClass
-import Players
+import NPC
+import Characters
 
-bob = baseCharacterClass.Characters("Bob", "DUDE", 5, 4, 50)
-notBob = Players.Player("Not BOB", "NOT DUDE", "five", 4, 50, Players.Occupations.Cop)
+bob = NPC.NPC("Bob", "DUDE", 5, 4, 50)
 
-print("Reducing health")
+warrior = Characters.Character("Warrior", "A Warrior", 30, 50, 50, Characters.Occupations.Cop, False, 0)
 
-notBob.reduce_health(20)
-print("Bob's health:", notBob.get_health())
+wizard = Characters.Character("Wizard", "A Wizard", 10, 20, 50, Characters.Occupations.Cop, True, 50)
 
-print("Healing bob")
-notBob.heal_character(15)
-print("Bob's health:", notBob.get_health())
-notBob.heal_character(15)
-print("Bob's health:", notBob.get_health())
-notBob.heal_character(15)
-print("Bob's health:", notBob.get_health())
-notBob.heal_character(15)
-print("Bob's health:", notBob.get_health())
+badWarrior = Characters.Character("Warrior", "A Warrior", 30, 50, 50, Characters.Occupations.Cop, False, 50)
 
-print("Increasing max health by 50")
-notBob.increase_max_health(50)
-print(notBob.get_max_health())
+badWizard = Characters.Character("Wizard", "A Wizard", 10, 20, 50, Characters.Occupations.Cop, "True", 50)
 
-print("Reducing health by 40")
+print("Warrior:", warrior.get_has_magic(), "POINTS: ", warrior.get_magic())
+print("Wizard:", wizard.get_has_magic(), "POINTS: ", wizard.get_magic())
+print("badWarrior:", badWarrior.get_has_magic(), "POINTS: ", badWarrior.get_magic())
+print("badWizard:", badWizard.get_has_magic(), "POINTS: ", badWizard.get_magic())
 
-notBob.reduce_health(40)
-print("Bob's health:", notBob.get_health())
-
-print("Increasing bob health")
-
-notBob.heal_character(15)
-print("Bob's health:", notBob.get_health())
-notBob.heal_character(15)
-print("Bob's health:", notBob.get_health())
-notBob.heal_character(15)
-print("Bob's health:", notBob.get_health())
-notBob.heal_character(15)
-print("Bob's health:", notBob.get_health())
-
-print("Killing bob")
-notBob.reduce_health(400)
-print("Bob's health:", notBob.get_health())
-
-Pob = Players.Player("Not BOB", "NOT DUDE", 5, 4, 50, "Cop")
+print("Warrior Level: ", warrior.get_level())
+warrior.increase_experience(25)
+print("Warrior XP: ", warrior.get_experience())
+print("Warrior XP_REQ", warrior.get_experience_req())
+print("INCREASING LEVEL")
+warrior.increase_experience(150)
+print("Warrior Level: ", warrior.get_level())
+print("Warrior XP: ", warrior.get_experience())
+print("Warrior XP_REQ", warrior.get_experience_req())
 
 
-"""
-NEED TO FIX ENUM ERROR AND TEST ENUM'S FROM PLAYER CLASS
-MAY NEED TO CHANGE THE check_enum function
-"""
