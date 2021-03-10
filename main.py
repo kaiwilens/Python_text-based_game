@@ -5,10 +5,10 @@
 
 
 import enum
-
 import NPC
 import Characters
 import Enemies
+import AudioSystem
 
 bob = NPC.NPC("Bob", "DUDE", 5, 4, 50)
 
@@ -50,5 +50,9 @@ warrior.increase_experience(badGuy.get_experience())
 print("Warrior Level: ", warrior.get_level())
 print("Warrior XP: ", warrior.get_experience())
 print("Warrior XP_REQ", warrior.get_experience_req())
+
+
+#testBeep = AudioSystem.SFX("", "300hz", ".mp3")  #Code is commented out because test file 300hz.mp3 was not uploaded to repository.
+#testBeep.play()                                  #Code is mostly included just to show use case for the SFX wrapper.
 
 
