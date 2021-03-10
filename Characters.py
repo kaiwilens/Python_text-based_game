@@ -32,6 +32,7 @@ class Character(NPC.NPC):
     __experience_req = 100
     __has_magic = False
     __magic = 0
+    __equipped_weapon = ""
 
     def __init__(self, name, description, strength, damage, max_health, occupation, magic, magic_points):
         super().__init__(name, description, strength, damage, max_health)
@@ -71,6 +72,12 @@ class Character(NPC.NPC):
 
     def get_is_alive(self):
         return self.__is_alive
+
+    def set_equipped_weapon(self, weapon):
+        self.__equipped_weapon = weapon
+
+    def get_equipped_weapon(self):
+        return self.__equipped_weapon
 
     #Character member functions for various actions
 
