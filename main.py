@@ -51,4 +51,4 @@ print("Warrior Level: ", warrior.get_level())
 print("Warrior XP: ", warrior.get_experience())
 print("Warrior XP_REQ", warrior.get_experience_req())
 
-
+warrior.do_battle([badGuy])
