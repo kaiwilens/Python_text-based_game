@@ -9,6 +9,7 @@ import NPC
 import Characters
 import Enemies
 import AudioSystem
+import Story
 
 bob = NPC.NPC("Bob", "DUDE", 5, 4, 50)
 
@@ -52,7 +53,7 @@ print("Warrior XP: ", warrior.get_experience())
 print("Warrior XP_REQ", warrior.get_experience_req())
 
 #basicBattleSequence
-warrior.do_battle([badGuy])
+#warrior.do_battle([badGuy])
 #=======
 
 #testBeep = AudioSystem.SFX("", "300hz", ".mp3")  #Code is commented out because test file 300hz.mp3 was not uploaded to repository.
@@ -60,3 +61,4 @@ warrior.do_battle([badGuy])
 
 
 #main
+Story.play_game()
