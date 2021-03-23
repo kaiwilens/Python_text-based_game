@@ -51,12 +51,12 @@ print("Warrior Level: ", warrior.get_level())
 print("Warrior XP: ", warrior.get_experience())
 print("Warrior XP_REQ", warrior.get_experience_req())
 
-basicBattleSequence
+#basicBattleSequence
 warrior.do_battle([badGuy])
-=======
+#=======
 
 #testBeep = AudioSystem.SFX("", "300hz", ".mp3")  #Code is commented out because test file 300hz.mp3 was not uploaded to repository.
 #testBeep.play()                                  #Code is mostly included just to show use case for the SFX wrapper.
 
 
-main
+#main
