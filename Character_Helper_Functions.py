@@ -11,10 +11,8 @@ def set_attributes(value, attribute):
         int(value)
         return int(value)
     except ValueError:
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        print("Value must be an integer.", attribute.upper(), " set to 0")
-        print("Use", attribute.upper(), "setter function to change attribute")
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        my_banner("Value must be an integer." + attribute.upper() + " set to 0.")
+        my_banner("Use" + attribute.upper() + "setter function to change attribute.")
         return 0
 
 
@@ -36,9 +34,7 @@ def check_enum(enumerator, value):
     if is_valid:
         return value
     else:
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        print("Value must be from enum ", enumerator, " Value has been set to N/A")
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        my_banner("Value must be from enum " + enumerator +" Value has been set to N/A")
         return "na"
 
 
@@ -46,7 +42,12 @@ def check_boolean(value):
     if value == True or value == False:
         return value
     else:
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        print("Value must be TRUE or FALSE. Value has been set to FALSE. USE SETTER TO CHANGE")
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        my_banner("Value must be TRUE or FALSE. Value has been set to FALSE. USE SETTER TO CHANGE.")
         return False
+
+
+def my_banner(bannerString):
+    """Given a string this will print a banner string which will be the same length of it."""
+    print(len(bannerString) * "!")
+    print(bannerString)
+    print(len(bannerString) * "!")
