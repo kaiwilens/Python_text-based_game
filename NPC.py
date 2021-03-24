@@ -60,9 +60,7 @@ class NPC:
                 self.__health = health
 
         except ValueError:
-            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-            print("Value must be an integer. HEALTH set to 0.")
-            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            error_message("Value must be an integer. HEALTH set to 0.")
             self.__health = 0
 
     def get_health(self):
