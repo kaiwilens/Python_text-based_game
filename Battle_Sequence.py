@@ -16,8 +16,8 @@ def do_battle(self, enemies):
                     print("Your health: ", self.get_health())
                     print("Enemy health: ", enemyHealth)
                     print(
-                        "(1) heal\n" +
-                        "(2) magic\n" +
+                        "(1) heal\n"
+                        "(2) magic\n"
                         "(3) strike"
                     )
                     option = int(input("Pick an option: "))
@@ -26,7 +26,7 @@ def do_battle(self, enemies):
                         break
                     print("Error: Input must be between 1-3.")
                 except ValueError:
-                    print("Error: Input must be an number.")
+                    print("Error: Input must be a number.")
             # Do stuff based on option
             if option == 1:
                 self.heal_character(1)
