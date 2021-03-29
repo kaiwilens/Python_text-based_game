@@ -2,6 +2,7 @@ import enum
 import NPC
 import Characters
 import Enemies
+import Battle_Sequence
 
 bob = NPC.NPC("Bob", "DUDE", "Five", 4, 50)
 
@@ -52,3 +53,10 @@ warrior.increase_experience(1500)
 print("Warrior Level: ", warrior.get_level())
 print("Warrior XP: ", warrior.get_experience())
 print("Warrior XP_REQ", warrior.get_experience_req())
+
+#basicBattleSequence
+Battle_Sequence.do_battle(warrior, [badGuy])
+#=======
+
+#testBeep = AudioSystem.SFX("", "300hz", ".mp3")  #Code is commented out because test file 300hz.mp3 was not uploaded to repository.
+#testBeep.play()   
