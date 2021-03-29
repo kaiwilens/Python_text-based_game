@@ -7,10 +7,8 @@ def do_battle(self, enemies):
     """
     # Battle each enemy
     for enemy in enemies:
+        enemyHealth = enemy.get_health()
         while True:
-            enemyHealth = enemy.get_health()
-            if not enemyHealth:
-                break
             while True:
                 try:
                     print("Your health: ", self.get_health())
@@ -39,6 +37,10 @@ def do_battle(self, enemies):
             elif option == 3:
                 enemy.set_health(enemyHealth - self.get_strength())
                 print("<<<!!!>>>")
+            # Check if enemy is still alive
+            enemyHealth = enemy.get_health()
+            if not enemyHealth:
+                break
             # Enemy attack YOU
             self.reduce_health(enemy.get_strength())
             if not self.get_health():
