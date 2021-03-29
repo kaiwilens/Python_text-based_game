@@ -11,8 +11,7 @@ def do_battle(self, enemies):
             enemyHealth = enemy.get_health()
             if not enemyHealth:
                 break
-            goodOption = False
-            while not goodOption:
+            while True:
                 try:
                     print("Your health: ", self.get_health())
                     print("Enemy health: ", enemyHealth)
@@ -23,9 +22,9 @@ def do_battle(self, enemies):
                     )
                     option = int(input("Pick an option: "))
                     # Check if good option
-                    goodOption = option > 0 and option < 4
-                    if not goodOption:
-                        print("Error: Input must be between 1-3.")
+                    if option > 0 and option < 4:
+                        break
+                    print("Error: Input must be between 1-3.")
                 except ValueError:
                     print("Error: Input must be an number.")
             # Do stuff based on option
