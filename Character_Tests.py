@@ -1,18 +1,11 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
 import enum
 import NPC
 import Characters
 import Enemies
-import Battle_Sequence
-import AudioSystem
-import Story
 
+bob = NPC.NPC("Bob", "DUDE", "Five", 4, 50)
 
+warrior = Characters.Character("Warrior", "A Warrior", 30, 50, 50, Characters.Occupations.Cop, False, 0)
 
 wizard = Characters.Character("Wizard", "A Wizard", 10, 20, 50, Characters.Occupations.Cop, True, 50)
 
@@ -51,12 +44,11 @@ print("Warrior Level: ", warrior.get_level())
 print("Warrior XP: ", warrior.get_experience())
 print("Warrior XP_REQ", warrior.get_experience_req())
 
-#basicBattleSequence
-#warrior.do_battle([badGuy])
-#=======
+print("Increasing Multiple Times")
+print()
 
-#testBeep = AudioSystem.SFX("", "300hz", ".mp3")  #Code is commented out because test file 300hz.mp3 was not uploaded to repository.
-#testBeep.play()                                  #Code is mostly included just to show use case for the SFX wrapper.
+warrior.increase_experience(1500)
 
-#main
-Story.play_game()
+print("Warrior Level: ", warrior.get_level())
+print("Warrior XP: ", warrior.get_experience())
+print("Warrior XP_REQ", warrior.get_experience_req())

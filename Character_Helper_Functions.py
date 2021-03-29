@@ -11,8 +11,8 @@ def set_attributes(value, attribute):
         int(value)
         return int(value)
     except ValueError:
-        my_banner("Value must be an integer." + attribute.upper() + " set to 0.")
-        my_banner("Use" + attribute.upper() + "setter function to change attribute.")
+        my_banner("Value must be an integer." + attribute.upper() +
+                  " set to 0. Use " + attribute.upper() + " setter function to change attribute.")
         return 0
 
 
