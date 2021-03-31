@@ -12,7 +12,7 @@ import Battle_Sequence
 import AudioSystem
 import Story
 
-
+warrior = Characters.Character("Warrior", "A Warrior", 30, 50, 50, Characters.Occupations.Cop, False, 0)
 
 wizard = Characters.Character("Wizard", "A Wizard", 10, 20, 50, Characters.Occupations.Cop, True, 50)
 
