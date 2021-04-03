@@ -11,6 +11,7 @@ import Enemies
 import Battle_Sequence
 import AudioSystem
 import Story
+import Title_Screen
 
 warrior = Characters.Character("Warrior", "A Warrior", 30, 50, 50, Characters.Occupations.Cop, False, 0)
 
@@ -59,4 +60,5 @@ print("Warrior XP_REQ", warrior.get_experience_req())
 #testBeep.play()                                  #Code is mostly included just to show use case for the SFX wrapper.
 
 #main
+Title_Screen.title_screen()
 Story.play_game()
