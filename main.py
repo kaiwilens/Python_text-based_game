@@ -11,14 +11,9 @@ import Enemies
 import Battle_Sequence
 import AudioSystem
 import Story
+import Title_Screen
 
 
-#basicBattleSequence
-#warrior.do_battle([badGuy])
-#=======
+Title_Screen.title_screen()
 
-#testBeep = AudioSystem.SFX("", "300hz", ".mp3")  #Code is commented out because test file 300hz.mp3 was not uploaded to repository.
-#testBeep.play()                                  #Code is mostly included just to show use case for the SFX wrapper.
-
-#main
 Story.play_game()
