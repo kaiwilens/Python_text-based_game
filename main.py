@@ -13,5 +13,7 @@ import AudioSystem
 import Story
 import Title_Screen
 
+
 Title_Screen.title_screen()
+
 Story.play_game()
