@@ -1,6 +1,7 @@
 import enum
 
 import Character_Helper_Functions
+from Character_Helper_Functions import my_banner
 
 
 class NPC:
@@ -60,7 +61,7 @@ class NPC:
                 self.__health = health
 
         except ValueError:
-            error_message("Value must be an integer. HEALTH set to 0.")
+            my_banner("Value must be an integer. HEALTH set to 0.")
             self.__health = 0
 
     def get_health(self):

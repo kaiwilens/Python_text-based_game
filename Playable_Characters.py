@@ -1,13 +1,6 @@
 import Characters
 
-blue_mage_description = "Blue_mage"
-white_mage_description = "White mage"
-black_mage_description = "Black mage"
-red_mage_description = "Red mage"
-thief_description = "Thief"
-berserker_description = "Berserker"
-warrior_description = "Warrior"
-
+from Character_Descriptions import *
 
 
 # (self, name, description, strength, damage, max_health, defense, occupation, magic, magic_points):
@@ -25,3 +18,4 @@ thief = Characters.Character("n/a", thief_description, 20, 10, 100, 10, Characte
 berserker = Characters.Character("n/a", berserker_description, 20, 10, 200, 32, Characters.Occupations.Cop, False, 0)
 
 warrior = Characters.Character("n/a", warrior_description, 20, 10, 150, 20, Characters.Occupations.Blue_Collar, False, 0)
+
