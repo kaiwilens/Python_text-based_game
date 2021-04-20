@@ -4,7 +4,7 @@ import Characters
 import Enemies
 import Battle_Sequence
 from Playable_Characters import *
-from Usable_Weapons import *
+from Usable_Armor_Weapons import *
 
 
 badGuy = Enemies.Enemy("Bad Guy", "Not good", 30, 20, 30, 2, False, 0, 50)
@@ -66,6 +66,14 @@ print("GATLING GUN")
 warrior.set_equipped_weapon(gatling_gun)
 
 warrior.set_equipped_weapon(sword)
+warrior.hub()
+
+warrior.equip_armor(leather_helm)
+warrior.equip_armor(leather_chest)
+warrior.equip_armor(leather_boots)
+warrior.equip_armor(leather_chaps)
+
+print("WITH ARMOR")
 warrior.hub()
 
 # thief.hub()

@@ -4,8 +4,8 @@ import NPC
 
 import Character_Helper_Functions
 from Character_Helper_Functions import my_banner
-import Usable_Weapons
-import Weapons_Class
+import Usable_Armor_Weapons
+import Armor_Weapons_Class
 
 
 class Occupations(enum.Enum):
@@ -31,7 +31,6 @@ class Enhancements(enum.Enum):
 
 
 class Character(NPC.NPC):
-   # __damage = 0
     __occupation = Occupations.na
     __enhancement = Enhancements.na
     __is_alive = True  # is_alive can be used to exit battle functions once one of the characters health reaches 0
@@ -41,7 +40,12 @@ class Character(NPC.NPC):
     __defense = 0
     __has_magic = False
     __magic = 0
-    __equipped_weapon = Usable_Weapons.fists
+    __equipped_weapon = Usable_Armor_Weapons.fists
+    __head = Usable_Armor_Weapons.naked
+    __chest = Usable_Armor_Weapons.naked
+    __legs = Usable_Armor_Weapons.naked
+    __feet = Usable_Armor_Weapons.naked
+
 
     def __init__(self, name, description, strength, damage, max_health, defense, occupation, magic, magic_points):
         super().__init__(name, description, strength, damage, max_health)
@@ -68,11 +72,29 @@ class Character(NPC.NPC):
     def get_damage(self):
         return NPC.NPC.get_damage(self) + self.__equipped_weapon.get_damage()
 
+    def get_strength(self):
+        total_strength = 0
+
+        total_strength += self.__feet.get_strength_increase()
+        total_strength += self.__legs.get_strength_increase()
+        total_strength += self.__chest.get_strength_increase()
+        total_strength += self.__head.get_strength_increase()
+
+        return NPC.NPC.get_strength(self) + total_strength
+
+
+
     def set_defense(self, defense):
         self.__defense = Character_Helper_Functions.set_attributes(defense, "Defense")
 
     def get_defense(self):
-        return self.__defense
+        total = 0
+
+        total += self.__feet.get_defense_increase()
+        total += self.__legs.get_defense_increase()
+        total += self.__chest.get_defense_increase()
+        total += self.__head.get_defense_increase()
+        return self.__defense + total
 
     def set_occupation(self, occupation):
         self.__occupation = Character_Helper_Functions.check_enum(Occupations, occupation)
@@ -100,12 +122,19 @@ class Character(NPC.NPC):
             self.__magic = Character_Helper_Functions.set_attributes(magic_points, "Magic Points")
 
     def get_magic(self):
-        return self.__magic
+        total = 0
+
+        total += self.__feet.get_magic_increase()
+        total += self.__legs.get_magic_increase()
+        total += self.__chest.get_magic_increase()
+        total += self.__head.get_magic_increase()
+
+        return self.__magic + total
 
     def get_is_alive(self):
         return self.__is_alive
 
-    def set_equipped_weapon(self, weapon=Weapons_Class.Weapons()):
+    def set_equipped_weapon(self, weapon=Armor_Weapons_Class.Weapons()):
 
         strength_met = False
         magic_met = False
@@ -123,11 +152,50 @@ class Character(NPC.NPC):
         if strength_met and magic_met:
             self.__equipped_weapon = weapon
 
+    def equip_armor(self, armor=Armor_Weapons_Class.Armor()):
+        strength_met = False
+        magic_met = False
 
+        if armor.get_strength_req() <= self.get_strength():
+            strength_met = True
+        else:
+            print("You are not strong enough to wear the " + armor.get_name())
+
+        if armor.get_magic_req() <= self.get_magic():
+            magic_met = True
+        else:
+            print("You do not have enough magic to wear the " + armor.get_name())
+
+        if strength_met and magic_met:
+            body_part = armor.get_body_part().upper()
+
+            if body_part == "FEET":
+                self.__feet = armor
+
+            if body_part == "LEGS":
+                self.__legs = armor
+
+            if body_part == "CHEST":
+                self.__chest = armor
+
+            if body_part == "HEAD":
+                self.__head = armor
 
 
     def get_equipped_weapon(self):
         return self.__equipped_weapon.get_name()
+
+    def get_head_armor(self):
+        return self.__head.get_name()
+
+    def get_chest_armor(self):
+        return self.__chest.get_name()
+
+    def get_leg_armor(self):
+        return self.__legs.get_name()
+
+    def get_feet_armor(self):
+        return self.__feet.get_name()
 
     #Character member functions for various actions
 
