@@ -4,6 +4,7 @@ import Characters
 import Enemies
 import Battle_Sequence
 from Playable_Characters import *
+from Usable_Weapons import *
 
 
 badGuy = Enemies.Enemy("Bad Guy", "Not good", 30, 20, 30, 2, False, 0, 50)
@@ -28,24 +29,51 @@ def do_increases(Character):
     print("MAGIC: ", Character.get_magic())
 
 
-do_increases(blue_mage)
+#do_increases(blue_mage)
 print()
-do_increases(white_mage)
+#do_increases(white_mage)
 print()
-do_increases(black_mage)
+#do_increases(black_mage)
 print()
-do_increases(red_mage)
+#do_increases(red_mage)
 print()
-do_increases(thief)
+#do_increases(thief)
 print()
-do_increases(berserker)
+#do_increases(berserker)
 print()
-do_increases(warrior)
+#do_increases(warrior)
 print()
+
+print("FISTS")
+warrior.hub()
+
+print("KNIFE")
+warrior.set_equipped_weapon(knife)
+
+warrior.hub()
+
+print("AXE")
+warrior.set_equipped_weapon(axe)
+
+warrior.hub()
+
+print("WAND")
+warrior.set_equipped_weapon(wand)
+
+warrior.hub()
+
+print("GATLING GUN")
+warrior.set_equipped_weapon(gatling_gun)
+
+warrior.set_equipped_weapon(sword)
+warrior.hub()
+
+# thief.hub()
+# badGuy.hub()
 
 
 #basicBattleSequence
-Battle_Sequence.do_battle(warrior, [badGuy])
+# Battle_Sequence.do_battle(warrior, [badGuy])
 #=======
 
 #testBeep = AudioSystem.SFX("", "300hz", ".mp3")  #Code is commented out because test file 300hz.mp3 was not uploaded to repository.

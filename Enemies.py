@@ -16,6 +16,17 @@ class Enemy(NPC.NPC):
         if self.__has_magic:
             self.__magic = Character_Helper_Functions.set_attributes(magic_points,"Magic Points")
 
+    def hub(self):
+        info_panel = str(self.get_name()) + "   LEVEL: " + str(self.get_level()) + \
+                      "   HP: " + str(self.get_health()) + "   DMG: " + str(self.get_damage())
+
+        border = "-" * len(info_panel)
+
+        print(border)
+        print(info_panel)
+        print(border)
+        print()
+
     def set_level(self, level):
         self.__level = Character_Helper_Functions.set_attributes(level, "Level")
 

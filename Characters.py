@@ -4,6 +4,8 @@ import NPC
 
 import Character_Helper_Functions
 from Character_Helper_Functions import my_banner
+import Usable_Weapons
+import Weapons_Class
 
 
 class Occupations(enum.Enum):
@@ -29,6 +31,7 @@ class Enhancements(enum.Enum):
 
 
 class Character(NPC.NPC):
+   # __damage = 0
     __occupation = Occupations.na
     __enhancement = Enhancements.na
     __is_alive = True  # is_alive can be used to exit battle functions once one of the characters health reaches 0
@@ -38,16 +41,32 @@ class Character(NPC.NPC):
     __defense = 0
     __has_magic = False
     __magic = 0
-    __equipped_weapon = ""
+    __equipped_weapon = Usable_Weapons.fists
 
     def __init__(self, name, description, strength, damage, max_health, defense, occupation, magic, magic_points):
         super().__init__(name, description, strength, damage, max_health)
+
 
         self.__defense = Character_Helper_Functions.set_attributes(defense, "Defense")
         self.__occupation = Character_Helper_Functions.check_enum(Occupations, occupation)
         self.__has_magic = Character_Helper_Functions.check_boolean(magic)
         if self.__has_magic:
             self.__magic = Character_Helper_Functions.set_attributes(magic_points, "Magic Points")
+
+    def hub(self):
+        info_panel = "LEVEL: " + str(self.get_level()) + "   HP: " + str(self.get_health()) + "/" + str(self.get_max_health()) + \
+                     "   WEAPON: " + str(self.get_equipped_weapon()) + \
+                     "   DMG: " + str(self.get_damage()) + "   DEF: " + str(self.get_defense()) + \
+                     "   XP: " + str(self.get_experience()) + "/" + str(self.get_experience_req())
+        border = "-" * len(info_panel)
+
+        print(border)
+        print(info_panel)
+        print(border)
+        print()
+
+    def get_damage(self):
+        return NPC.NPC.get_damage(self) + self.__equipped_weapon.get_damage()
 
     def set_defense(self, defense):
         self.__defense = Character_Helper_Functions.set_attributes(defense, "Defense")
@@ -86,11 +105,29 @@ class Character(NPC.NPC):
     def get_is_alive(self):
         return self.__is_alive
 
-    def set_equipped_weapon(self, weapon):
-        self.__equipped_weapon = weapon
+    def set_equipped_weapon(self, weapon=Weapons_Class.Weapons()):
+
+        strength_met = False
+        magic_met = False
+
+        if weapon.get_strength_req() <= self.get_strength():
+            strength_met = True
+        else:
+            print("You are not strong enough to wield this weapon")
+
+        if weapon.get_magic_req() <= self.get_magic():
+            magic_met = True
+        else:
+            print("You do not have enough magic to wield this weapon")
+
+        if strength_met and magic_met:
+            self.__equipped_weapon = weapon
+
+
+
 
     def get_equipped_weapon(self):
-        return self.__equipped_weapon
+        return self.__equipped_weapon.get_name()
 
     #Character member functions for various actions
 
