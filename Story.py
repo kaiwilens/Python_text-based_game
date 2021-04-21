@@ -1,4 +1,6 @@
+from Battle_Sequence import do_battle
 from Characters import Occupations
+from Enemy_Characters import enemy_list
 
 
 classes = [
@@ -90,4 +92,5 @@ def play_game():
     occupation = Occupations(classID)
     print(name)
     print(occupation)
+    do_battle(enemy_list)
     # End of script
