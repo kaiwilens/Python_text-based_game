@@ -6,9 +6,12 @@ def do_battle(character, enemies):
     The function does stuff.
     """
     # Battle each enemy
-    for enemy in enemies:
-        enemyHealth = enemy.get_health()
-        while True:
+    while True:
+        if not len(enemies): break
+        for enemy in enemies:
+            enemyHealth = enemy.get_health()
+            if not enemyHealth:
+                continue
             while True:
                 try:
                     print("Your health: ", character.get_health())
@@ -40,11 +43,11 @@ def do_battle(character, enemies):
             # Check if enemy is still alive
             enemyHealth = enemy.get_health()
             if not enemyHealth:
-                break
+                continue
             # Enemy attack YOU
             character.reduce_health(enemy.get_damage())
             if not character.get_health():
                 print("You died!")
                 return
-        print("DEAD!")
+        #print("DEAD!")
     print("ALL ENEMIES DESTROYED!")
