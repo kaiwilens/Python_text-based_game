@@ -53,8 +53,10 @@ classes = [
         " are well rounded and are a natural leader."
     },
     #{
-    #    "name": "Dragoon",
-    #    "desc": "This character is a college professor of"
+    #    "name":
+    #    "Dragoon",
+    #    "desc":
+    #    "This character is a college professor of"
     #    " history in the present. They are very interested"
     #    " in the past that they are now in, as this was a"
     #    " period of history never recorded. This character"
@@ -98,8 +100,7 @@ def play_game():
                   len(playable_characters))
         except ValueError:
             print("Error: input must be a number.")
-    #occupation = Occupations(classID)
     print(name)
-    character = playable_characters[classID]
+    character = playable_characters[classID - 1]
     do_battle(character, enemy_list)
     # End of script
