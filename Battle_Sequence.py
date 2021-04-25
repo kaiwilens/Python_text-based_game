@@ -1,3 +1,11 @@
+options = [
+    "heal",
+    "strike",
+    "inventory",
+    "retreat",
+]
+
+
 def do_battle(character, enemies):
     """
     Used to battle enemies.
@@ -14,40 +22,39 @@ def do_battle(character, enemies):
                 continue
             while True:
                 try:
-                    print("Your health: ", character.get_health())
-                    print("Enemy health: ", enemyHealth)
-                    print(
-                        "(1) heal\n"
-                        "(2) magic\n"
-                        "(3) strike"
-                    )
-                    option = int(input("Pick an option: "))
+                    print("Your health:", character.get_health())
+                    print("Enemy health:", enemyHealth)
+                    for i in range(0, len(options)):
+                        print("(%i) %s" % (i + 1, options[i]))
+                    option_id = int(input("Pick an option: "))
                     # Check if good option
-                    if option > 0 and option < 4:
+                    if option_id > 0 and option_id <= len(options):
                         break
-                    print("Error: Input must be between 1-3.")
+                    print("Error: Input must be between 1-%i." % len(options))
                 except ValueError:
                     print("Error: Input must be a number.")
+            option = options[option_id - 1]
             # Do stuff based on option
-            if option == 1:
+            if option == "heal":
                 character.heal_character(1)
-            elif option == 2:
-                if character.get_has_magic():
-                    # How does magic work?
-                    print("Magic!")
-                else:
-                    print("Error: No magic.")
-            elif option == 3:
+            elif option == "strike":
                 enemy.set_health(enemyHealth - character.get_damage())
                 print("<<<!!!>>>")
+            elif option == "inventory":
+                print("Inventory")
+                # add code for inventory here
+            elif option == "retreat":
+                print("Retreating")
+                return True
             # Check if enemy is still alive
             enemyHealth = enemy.get_health()
             if not enemyHealth:
+                print("Enemy destroyed!")
                 continue
             # Enemy attack YOU
             character.reduce_health(enemy.get_damage())
             if not character.get_health():
                 print("You died!")
-                return
-        #print("DEAD!")
+                return False
     print("ALL ENEMIES DESTROYED!")
+    return True
