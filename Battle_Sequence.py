@@ -14,7 +14,8 @@ def do_battle(character, enemies):
     """
     # Battle each enemy
     while True:
-        if not len(enemies): break
+        if not len(enemies):
+            break
         for enemy in enemies:
             enemyHealth = enemy.get_health()
             if not enemyHealth:
