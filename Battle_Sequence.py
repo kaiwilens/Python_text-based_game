@@ -1,5 +1,4 @@
 options = [
-    "heal",
     "strike",
     "inventory",
     "retreat",
@@ -35,9 +34,7 @@ def do_battle(character, enemies):
                     print("Error: Input must be a number.")
             option = options[option_id - 1]
             # Do stuff based on option
-            if option == "heal":
-                character.heal_character(1)
-            elif option == "strike":
+            if option == "strike":
                 enemy.set_health(enemyHealth - character.get_damage())
                 print("<<<!!!>>>")
             elif option == "inventory":
