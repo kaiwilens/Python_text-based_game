@@ -58,7 +58,7 @@ class Character(NPC.NPC):
             self.__magic = Character_Helper_Functions.set_attributes(magic_points, "Magic Points")
 
     def hub(self):
-        info_panel = "LEVEL: " + str(self.get_level()) + "   HP: " + str(self.get_health()) + "/" + str(self.get_max_health()) + \
+        info_panel = "NAME: " + str(self.get_name()) + "   LEVEL: " + str(self.get_level()) + "   HP: " + str(self.get_health()) + "/" + str(self.get_max_health()) + \
                      "   WEAPON: " + str(self.get_equipped_weapon()) + \
                      "   DMG: " + str(self.get_damage()) + "   DEF: " + str(self.get_defense()) + \
                      "   XP: " + str(self.get_experience()) + "/" + str(self.get_experience_req())

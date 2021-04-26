@@ -55,7 +55,7 @@ class NPC:
                 print("Health cannot be greater than max health. Health set to max health")
                 self.__health = self.__max_health
             elif health < 0:
-                print("Health must be greater than 0. Health set to 0")
+                # print("Health must be greater than 0. Health set to 0")
                 self.__health = 0
             else:
                 self.__health = health
@@ -65,7 +65,7 @@ class NPC:
             self.__health = 0
 
     def get_health(self):
-        return self.__health
+        return round(self.__health)
 
     def set_max_health(self, max_health):
         self.__max_health = Character_Helper_Functions.set_attributes(max_health, "Max Health")

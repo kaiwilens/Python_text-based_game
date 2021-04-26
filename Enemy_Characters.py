@@ -14,6 +14,9 @@ troll_description = "This troll is equipped with a rifle. " \
 
 troll_with_gun = Enemies.Enemy("Rifle Troll", troll_description, 40, 10, 50, 2, False, 0, 30)
 
+bouncer_description = "A bulky warrior who does not like you at all"
+bouncer = Enemies.Enemy("Rifle Troll", bouncer_description, 40, 5, 25, 2, False, 0, 30)
+
 laser_spider_description = "This spider is equipped with high tech lasers. " \
                            "This gives it the ability to attack from a distance " \
                            "as well as bite at close range."
@@ -25,4 +28,6 @@ army_jeep_orcs_description = "A group of orcs armed with a jeep with a " \
 
 army_jeep_orcs = Enemies.Enemy("Army Jeep Orcs", army_jeep_orcs_description, 100, 100, 500, 10, False, 0, 1000)
 
-enemy_list = [hover_board_slime, troll_with_gun, laser_spider, army_jeep_orcs]
+enemy_list = [hover_board_slime, troll_with_gun, laser_spider]
+bouncer_list = [bouncer]
+spider_list = [laser_spider]

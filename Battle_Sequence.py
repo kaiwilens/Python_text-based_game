@@ -13,6 +13,7 @@ def do_battle(character, enemies):
     The function does stuff.
     """
     # Battle each enemy
+    in_battle = True
     while True:
         if not len(enemies):
             break
@@ -20,8 +21,11 @@ def do_battle(character, enemies):
             enemyHealth = enemy.get_health()
             if not enemyHealth:
                 continue
+
+            print(enemy.get_description())
             while True:
                 try:
+                    print(str(character.hub()) + "   " + str(enemy.hub()))
                     print("Your health:", character.get_health())
                     print("Enemy health:", enemyHealth)
                     for i in range(0, len(options)):
@@ -48,7 +52,8 @@ def do_battle(character, enemies):
             enemyHealth = enemy.get_health()
             if not enemyHealth:
                 print("Enemy destroyed!")
-                continue
+                return True
+               # continue
             # Enemy attack YOU
             character.reduce_health(enemy.get_damage())
             if not character.get_health():

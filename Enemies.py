@@ -25,7 +25,7 @@ class Enemy(NPC.NPC):
         print(border)
         print(info_panel)
         print(border)
-        print()
+
 
     def set_level(self, level):
         self.__level = Character_Helper_Functions.set_attributes(level, "Level")
