@@ -1,4 +1,4 @@
-from Story import classes
+#from Story import classes
 
 
 blue_mage_description = "Blue_mage"
