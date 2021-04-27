@@ -9,11 +9,13 @@ import NPC
 import Characters
 import Enemies
 import Battle_Sequence
-import AudioSystem
+# import AudioSystem
 import Story
 import Title_Screen
 
 
 Title_Screen.title_screen()
 
+
 Story.play_game()
+Story.game_story()
