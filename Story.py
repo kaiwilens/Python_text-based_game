@@ -206,6 +206,14 @@ def equip_initial_armor(person = Character):
     person.equip_armor(leather_chaps)
     person.set_equipped_weapon(knife)
 
+def dialog(person, text):
+    #dialog function 
+    print(person.get_name() + ":")
+    print(text)
+    press_any_key()
+
+
+
 def game_story():
 
     player = character_creation()
@@ -243,39 +251,27 @@ def game_story():
   #  character_creation(1)
 
     print()
-    print(party[0].get_name() + ":")
-    print('??? - I don’t know… WHOA, where are we?')
-    press_any_key()
+    dialog(party[0], '??? - I don’t know… WHOA, where are we?')
+
 
    # character_creation(2)
 
     print()
-    print(party[1].get_name() + ":")
-    print('??? - I’ve never seen this before… It’s so bizarre.')
-    press_any_key()
+    dialog(party[1], '??? - I’ve never seen this before… It’s so bizarre.')
 
   #  character_creation(3)
 
     print()
-    print(player.get_name() + ":")
-    print(' - Hey, are you alright? You gotta wake up!')
-    press_any_key()
+    dialog(player, ' - Hey, are you alright? You gotta wake up!')
 
     print()
-    print(party[2].get_name() + ":")
-    print('??? - ZZZ… Five more minutes ... ZZZ')
-    press_any_key()
+    dialog(party[2], '??? - ZZZ… Five more minutes ... ZZZ')
 
     print()
-    print(player.get_name() + ":")
-    print(' - WAKE UP!')
-    press_any_key()
+    dialog(player, ' - WAKE UP!')
 
     print()
-    print(party[2].get_name() + ":")
-    print('??? - AH! I’M AWAKE… Wait, Who are you guys?, and what the hell is going on?')
-
-    press_any_key()
+    dialog(party[2], '??? - AH! I’M AWAKE… Wait, Who are you guys?, and what the hell is going on?')
 
   #  character_creation(4)
 
@@ -294,31 +290,23 @@ def game_story():
 
         press_any_key()
 
-        print_name(party, Playable_Characters.warrior)
-        print(' - GODDAMN IT, THIS IS WHY I SHOULD NEVER HAVE LET YOU TALK ME INTO GOING \n'
+
+        dialog(Playable_Characters.warrior,' - GODDAMN IT, THIS IS WHY I SHOULD NEVER HAVE LET YOU TALK ME INTO GOING \n'
               'TO THAT RENAISSANCE FAIR')
 
-        press_any_key()
 
-        print_name(party, Playable_Characters.dragoon)
-        print(' - WHAT?! HOW IS ANY OF THIS MY FAULT? Besides, you were lacking in your\n'
+        dialog(Playable_Characters.dragoon,' - WHAT?! HOW IS ANY OF THIS MY FAULT? Besides, you were lacking in your\n'
               'essays and I thought it would help.')
 
-        press_any_key()
 
-        print_name(party, Playable_Characters.warrior)
-        print(' - Well, a lot of good that did us, huh? Now I’m stuck in god knows where\n'
+
+        dialog(Playable_Characters.warrior,' - Well, a lot of good that did us, huh? Now I’m stuck in god knows where\n'
               'with you, who is wearing ridiculous armor and criticising my writing!')
 
-        print_name(party, Playable_Characters.dragoon)
-        print(" - Wha- MY ARMOR IS NOT RIDICULOUS! It's period accurate!")
+        dialog(Playable_Characters.dragoon," - Wha- MY ARMOR IS NOT RIDICULOUS! It's period accurate!")
 
-        press_any_key()
 
-        print_name(party, Playable_Characters.warrior)
-        print(' - Whatever.')
-
-        press_any_key()
+        dialog(Playable_Characters.warrior,' - Whatever')
 
     # IF PARTYMEMBERS 1-4 ARE BERSERKER AND THIEF
 
@@ -334,32 +322,22 @@ def game_story():
 
         press_any_key()
 
-        print_name(party, Playable_Characters.thief)
-        print(' - Hey buddy, are you alright?')
-        press_any_key()
 
-        print_name(party, Playable_Characters.berserker)
-        print(' - AGHHH! WHO DID THAT? I SWEAR I’M GONNA STRANGLE THEM!!!')
-        press_any_key()
+        dialog(Playable_Characters.thief,' - Hey buddy, are you alright?')
 
-        print_name(party, Playable_Characters.thief)
-        print(' - WHOA, calm down pal, everything’s okay. I don’t think\n'
+        dialog(Playable_Characters.berserker,' - AGHHH! WHO DID THAT? I SWEAR I’M GONNA STRANGLE THEM!!!')
+
+        dialog(Playable_Characters.thief,' - WHOA, calm down pal, everything’s okay. I don’t think\n'
               'anybody did that, I think it was that big, bright circle.')
-        press_any_key()
 
-        print_name(party, Playable_Characters.berserker)
-        print(' - Ah, I’m sorry little dude, I got out of control again.')
-        press_any_key()
+        dialog(Playable_Characters.berserker,' - Ah, I’m sorry little dude, I got out of control again.')
 
-        print_name(party, Playable_Characters.thief)
-        print(' - That’s alright, let’s just take a deep breath, and then\n'
+        dialog(Playable_Characters.thief,' - That’s alright, let’s just take a deep breath, and then\n'
               'we can think about what we need to do next, alright?')
-        press_any_key()
 
-        print_name(party, Playable_Characters.berserker)
-        print(' - Okay...')
 
-        press_any_key()
+        dialog(Playable_Characters.berserker,' - Okay...')
+
 
     # IF PARTYMEMBERS 1-4 ARE BLUE AND BLACK MAGES
 
@@ -376,35 +354,23 @@ def game_story():
 
         press_any_key()
 
-        print_name(party, Playable_Characters.blue_mage)
-        print(' - Hey, are you alright, that was a rough…  *gasps*  YOU!')
-        press_any_key()
+        dialog(Playable_Characters.blue_mage,' - Hey, are you alright, that was a rough…  *gasps*  YOU!')
 
-        print_name(party, Playable_Characters.black_mage)
-        print(' - Oh great, you again…')
-        press_any_key()
+        dialog(Playable_Characters.black_mage,' - Oh great, you again…')
 
-        print_name(party, Playable_Characters.blue_mage)
-        print(' - Great, now I’m stuck here with this meat-eating monster!\n'
+        dialog(Playable_Characters.blue_mage,' - Great, now I’m stuck here with this meat-eating monster!\n'
               'How could my day get any worse?')
-        press_any_key()
 
-        print_name(party, Playable_Characters.black_mage)
-        print(' - Monster?! How dare you! I was trying to explain that there\n'
+        dialog(Playable_Characters.black_mage,' - Monster?! How dare you! I was trying to explain that there\n'
               'is a definitive health benefit to eating meat! There are specific\n'
               'enzymes that certain meats have that-')
 
-        press_any_key()
 
-        print_name(party, Playable_Characters.blue_mage)
-        print(' - LALALALALALALA I CAN’T HEAR YOU LALALALA-')
+        dialog(Playable_Characters.blue_mage,' - LALALALALALALA I CAN’T HEAR YOU LALALALA-')
 
-        press_any_key()
 
-        print_name(party, Playable_Characters.black_mage)
-        print(' - Oh yeah, REAL MATURE! How could MY day get any worse?')
+        dialog(Playable_Characters.blue_mage,' - Oh yeah, REAL MATURE! How could MY day get any worse?')
 
-        press_any_key()
 
     # IF PARTYMEMBERS 1-4 ARE RED AND WHITE MAGES
 
@@ -420,53 +386,33 @@ def game_story():
 
         press_any_key()
 
-        print_name(party, Playable_Characters.red_mage)
-        print(' - What the hell? What happened to us?')
-        press_any_key()
+        dialog(Playable_Characters.red_mage,' - What the hell? What happened to us?')
 
-        print_name(party, Playable_Characters.white_mage)
-        print(' - I’m not sure. All I remember was getting ready to send a \n'
+        dialog(Playable_Characters.white_mage,' - I’m not sure. All I remember was getting ready to send a \n'
               'patient to the MRI, and then waking up here.')
-        press_any_key()
 
-        print_name(party, Playable_Characters.red_mage)
-        print(' - Huh, that’s all I remember too. Strange…')
-        press_any_key()
+        dialog(Playable_Characters.red_mage,' - Huh, that’s all I remember too. Strange…')
 
-        print_name(party, Playable_Characters.white_mage)
-        print(' - We should look around to see if anyone is hurt.')
-        press_any_key()
+        dialog(Playable_Characters.white_mage,' - We should look around to see if anyone is hurt.')
 
-        print_name(party, Playable_Characters.red_mage)
-        print(' - You can handle that, I’m gonna check out this portal-lookin thing.')
-        press_any_key()
+        dialog(Playable_Characters.red_mage,' - You can handle that, I’m gonna check out this portal-lookin thing.')
 
-        print_name(party, Playable_Characters.white_mage)
-        print(' - Alright.')
+        dialog(Playable_Characters.white_mage,' - Alright.')
 
-        press_any_key()
 
     # END OF RELATIONSHIP DIALOGUE
 
     print()
-    print(player.get_name() + ":")
-    print(' -  Are all of you alright?')
-    press_any_key()
+    dialog(player,' -  Are all of you alright?')
 
     print()
-    print(party[0].get_name() + ":")
-    print(' - Um… I think so')
-    press_any_key()
+    dialog(party[0],' - Um… I think so')
 
     print()
-    print(party[1].get_name() + ":")
-    print(' - Yeah, for now')
-    press_any_key()
+    dialog(party[1],' - Yeah, for now')
 
     print()
-    print(party[2].get_name() + ":")
-    print(' - I’m just a little nauseous, but other than that, I’m fine.')
-    press_any_key()
+    dialog(party[2],' - I’m just a little nauseous, but other than that, I’m fine.')
 
     print('From the distance, a small, winged creature was arriving.')
     press_any_key()
@@ -477,19 +423,13 @@ def game_story():
           'HERALD OF THE DARK LORD ROTHOS!')
 
     print()
-    print(party[0].get_name() + ":")
-    print(' - Whoa…')
-    press_any_key()
+    dialog(party[0],' - Whoa…')
 
     print()
-    print(party[2].get_name() + ":")
-    print(' - What is that thing?')
-    press_any_key()
+    dialog(party[2],' - What is that thing?')
 
     print()
-    print(party[1].get_name() + ":")
-    print(' - Looks kinda gross…')
-    press_any_key()
+    dialog(party[1],' - Looks kinda gross…')
 
     print('Fislyo - HOW DARE Y-  AHEM… I HAVE BEEN SENT HERE BY MY \n'
           'MASTER TO REQUEST YOUR ASSISTANCE!')
@@ -497,9 +437,7 @@ def game_story():
     press_any_key()
 
     print()
-    print(player.get_name() + ":")
-    print(' - Assistance? With what?')
-    press_any_key()
+    dialog(player,' - Assistance? With what?')
 
     print('Fislyo - IF YOU COULD NOT ALREADY TELL, YOU HAVE BEEN SENT\n'
           'BACK IN TIME. THIS TEMPORAL DISTURBANCE WAS CAUSED BY THE\n'
@@ -510,8 +448,7 @@ def game_story():
 
 
     print()
-    print(party[2].get_name() + ":")
-    print(' - What’s in it for us?')
+    dialog(party[2],' - What’s in it for us?')
 
     print('Fislyo - MY MASTER PROMISES THAT YOU WILL ALL RETURN TO YOUR\n'
           'TIME IF YOU ARE ABLE TO RETURN THE CUBE TO HIM!')
@@ -534,31 +471,23 @@ def game_story():
 
 def good_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mage_and_black_mage, red_mage_and_white_mage):
     print()
-    print(player.get_name() + ":")
-    print(' - I don’t think so. Get outta here ya little slimeball!')
-    press_any_key()
+    dialog(player,' - I don’t think so. Get outta here ya little slimeball!')
 
     print(' - FINE!, BUT KNOW THAT THERE WILL BE CONSEQUENCES FOR YOUR INSOLENCE!')
     press_any_key()
 
     print()
-    print(party[2].get_name() + ":")
-    print(' - Whatever dude.')
-    press_any_key()
+    dialog(party[2],' - Whatever dude.')
 
     print('Fislyo leaves in a huff')
 
     press_any_key()
 
     print()
-    print(party[1].get_name() + ":")
-    print(' - That was weird, we should look around and find someone to help us.')
-    press_any_key()
+    dialog(party[1],' - That was weird, we should look around and find someone to help us.')
 
     print()
-    print(player.get_name() + ":")
-    print(' - That’s a good idea.')
-    press_any_key()
+    dialog(player,' - That’s a good idea.')
 
     print('The Party sets out for the Tavern.')
     press_any_key()
@@ -576,40 +505,26 @@ def good_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mag
     # IF PARTYMEMBERS 1-4 ARE WARRIOR AND DRAGOON
     if warrior_and_dragoon:
 
-        print_name(party, Playable_Characters.dragoon)
-        print(' - Looks like we’re lucky I was wearing this armor. You must\n'
+        dialog(Playable_Characters.dragoon,' - Looks like we’re lucky I was wearing this armor. You must\n'
               'look strange to everyone wearing your street clothes.')
-        press_any_key()
 
-        print_name(party, Playable_Characters.warrior)
-        print(' - I didn’t think I’d ever say this, but I actually agree with\n'
+        dialog(Playable_Characters.warrior,' - I didn’t think I’d ever say this, but I actually agree with\n'
               'you. I didn’t like the look that the bartender was giving us.')
-        press_any_key()
 
-        print_name(party, Playable_Characters.dragoon)
-        print(' - Yeah. Well I suppose this is as good a time as any: If you\n'
+        dialog(Playable_Characters.dragoon,' - Yeah. Well I suppose this is as good a time as any: If you\n'
               'want information in the past, who do you talk to?')
 
-        press_any_key()
 
-        print_name(party, Playable_Characters.warrior)
-        print(' - You’re quizzing me? Now? If you’re gonna do that, you’ll\n'
+        dialog(Playable_Characters.warrior,' - You’re quizzing me? Now? If you’re gonna do that, you’ll\n'
               'have to ask a harder question than that, old man. The answer\n'
               'is the bartender.')
-        press_any_key()
 
-        print_name(party, Playable_Characters.dragoon)
-        print(' - I was just kidding. But where did you get that answer from?')
-        press_any_key()
+        dialog(Playable_Characters.dragoon,' - I was just kidding. But where did you get that answer from?')
 
-        print_name(party, Playable_Characters.warrior)
-        print(' - You don’t know? It’s in, like, every RPG ever.')
-        press_any_key()
+        dialog(Playable_Characters.warrior,' - You don’t know? It’s in, like, every RPG ever.')
 
-        print_name(party, Playable_Characters.dragoon)
-        print('Of course… Well, either way, we should still go talk to him,\n'
+        dialog(Playable_Characters.dragoon,'Of course… Well, either way, we should still go talk to him,\n'
               'he might know something.')
-        press_any_key()
 
     # IF PARTYMEMBERS 1-4 ARE BERSERKER AND THIEF
 
@@ -617,98 +532,62 @@ def good_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mag
         press_any_key()
 
 
-        print_name(party, Playable_Characters.thief)
-        print(" - Look at all the people…! I’ll bet they're loaded!")
-        press_any_key()
+        dialog(Playable_Characters.thief," - Look at all the people…! I’ll bet they're loaded!")
 
-        print_name(party, Playable_Characters.berserker)
-        print(' - Get a hold of yourself buddy. Remember the saying?')
-        press_any_key()
+        dialog(Playable_Characters.berserker,' - Get a hold of yourself buddy. Remember the saying?')
 
-        print_name(party, Playable_Characters.thief)
-        print(' - *sighs. Let my hands roam and I’ll be fined out of house\n'
+        dialog(Playable_Characters.thief,' - *sighs. Let my hands roam and I’ll be fined out of house\n'
               'and home. Keep them close and I’ll make no foes. Do not let\n'
               'the urge guide. Let it go. Let it slide. I do not steal for\n'
               'that self is not real.\n'
               '...\n'
               'It feels Cheesy')
-        press_any_key()
 
-        print_name(party, Playable_Characters.berserker)
-        print(' - We’ll bring it up in the next meeting then.')
-        press_any_key()
+        dialog(Playable_Characters.berserker,' - We’ll bring it up in the next meeting then.')
 
-        print_name(party, Playable_Characters.thief)
-        print(' - If we can even get out of this mess. Anyway, let’s go talk\n'
+        dialog(Playable_Characters.thief,' - If we can even get out of this mess. Anyway, let’s go talk\n'
               'to the bartender. You know as much as I do that the guy running\n'
               'this place will have information.')
 
-        press_any_key()
 
     # IF PARTYMEMBERS 1-4 ARE BLUE AND BLACK MAGE
 
     if blue_mage_and_black_mage:
         press_any_key()
 
-        print_name(party, Playable_Characters.black_mage)
-        print(' - You know what’s always confused me?')
-        press_any_key()
+        dialog(Playable_Characters.black_mage,' - You know what’s always confused me?')
 
-        print_name(party, Playable_Characters.blue_mage)
-        print(' - How people can be perfectly healthy without eating meat?')
-        press_any_key()
+        dialog(Playable_Characters.blue_mage,' - How people can be perfectly healthy without eating meat?')
 
-        print_name(party, Playable_Characters.black_mage)
-        print(' - Now is not the time for that. It’s that no matter how much\n'
+        dialog(Playable_Characters.black_mage,' - Now is not the time for that. It’s that no matter how much\n'
               'we may study science, bartenders just seem to have this strange\n'
               'power of knowing what you want to know and saying what you want to hear.')
-        press_any_key()
 
-        print_name(party, Playable_Characters.blue_mage)
-        print(" - Actually it’s because they're in a place where all sorts of\n"
+        dialog(Playable_Characters.blue_mage," - Actually it’s because they're in a place where all sorts of\n"
               "people gather. It’s not rocket science.")
-        press_any_key()
 
-        print_name(party, Playable_Characters.black_mage)
-        print(' - Do you always have to take everything so seriously?')
-        press_any_key()
+        dialog(Playable_Characters.black_mage,' - Do you always have to take everything so seriously?')
 
-        print_name(party, Playable_Characters.blue_mage)
-        print(' - Considering our situation, we should be.')
-        press_any_key()
+        dialog(Playable_Characters.blue_mage,' - Considering our situation, we should be.')
 
     # IF PARTYMEMBERS 1-4 ARE RED AND WHITE MAGE
 
     if red_mage_and_white_mage:
         press_any_key()
 
-        print_name(party, Playable_Characters.white_mage)
-        print(' - I always feel bad for bartenders.')
-        press_any_key()
+        dialog(Playable_Characters.white_mage,' - I always feel bad for bartenders.')
 
-        print_name(party, Playable_Characters.red_mage)
-        print(' - Why’s that?')
-        press_any_key()
+        dialog(Playable_Characters.red_mage,' - Why’s that?')
 
-        print_name(party, Playable_Characters.white_mage)
-        print(' - Their work hours must be exhausting.')
-        press_any_key()
+        dialog(Playable_Characters.white_mage,' - Their work hours must be exhausting.')
 
-        print_name(party, Playable_Characters.red_mage)
-        print(' - Any more exhausting than ours?')
-        press_any_key()
+        dialog(Playable_Characters.red_mage,' - Any more exhausting than ours?')
 
-        print_name(party, Playable_Characters.white_mage)
-        print(' - That’s a good point.')
-        press_any_key()
+        dialog(Playable_Characters.white_mage,' - That’s a good point.')
 
-        print_name(party, Playable_Characters.red_mage)
-        print(' - He might know something that can help us. Let’s go ask him.')
-        press_any_key()
+        dialog(Playable_Characters.red_mage,' - He might know something that can help us. Let’s go ask him.')
 
-        print_name(party, Playable_Characters.white_mage)
-        print(' - Alright, lead the way.')
-        press_any_key()
+        dialog(Playable_Characters.white_mage,' - Alright, lead the way.')
 
     # END OF RELATIONSHIP DIALOGUE
 
@@ -719,31 +598,21 @@ def good_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mag
     press_any_key()
 
     print()
-    print(party[0].get_name() + ":")
-    print(' - Oh, we’re not here for drinks.')
-    press_any_key()
+    dialog(party[0],' - Oh, we’re not here for drinks.')
 
     print()
-    print(party[2].get_name() + ":")
-    print(' - I’ll have some of your best ale please.')
-    press_any_key()
+    dialog(party[2],' - I’ll have some of your best ale please.')
 
     print()
-    print(player.get_name() + ":")
-    print(" - Ignore them. Even if we were here for drinks, we probably\n"
+    dialog(player," - Ignore them. Even if we were here for drinks, we probably\n"
           "wouldn't even be able to pay for them.")
-    press_any_key()
 
     print()
-    print(party[1].get_name() + ":")
-    print(' - Aw man… I wanted a drink!')
-    press_any_key()
+    dialog(party[1],' - Aw man… I wanted a drink!')
 
     print()
-    print(party[2].get_name() + ":")
-    print(' - It HAS been a rough day for all of us, but given our situation,\n'
+    dialog(party[2],' - It HAS been a rough day for all of us, but given our situation,\n'
           'it’s we should keep a clear head. Who knows what it would do to us.')
-    press_any_key()
 
     print(' - So you aren’t here for drinks…  then what ARE you here for?')
     press_any_key()
@@ -752,25 +621,20 @@ def good_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mag
     press_any_key()
 
     print()
-    print(player.get_name() + ":")
-    print(' - Information.')
-    press_any_key()
+    dialog(player,' - Information.')
 
     print('The bartender raises an eyebrow.')
     press_any_key()
 
     print()
-    print(party[2].get_name() + ":")
-    print(' - This may sound crazy, but we’re from the future. We were brought\n'
+    dialog(party[2],' - This may sound crazy, but we’re from the future. We were brought\n'
           'back here to the past by some sort of rift. And then this creature\n'
           'named Fislyo asks us to help him find something called the Hell Cube.')
 
     print('The bartender blinks.')
 
     print()
-    print(player.get_name() + ":")
-    print(' - Do you know what this Hell Cube is?')
-    press_any_key()
+    dialog(player,' - Do you know what this Hell Cube is?')
 
     print('The bartender is silent for a long moment. Then he nods silently and\n'
           'gestures toward the back room. The party follows him into the dimly lit room.')
@@ -785,9 +649,7 @@ def good_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mag
     press_any_key()
 
     print()
-    print(player.get_name() + ":")
-    print(' - How did your family know for certain that there was a prophecy?')
-    press_any_key()
+    dialog(player,' - How did your family know for certain that there was a prophecy?')
 
     print(' - Because of this.')
     press_any_key()
@@ -817,9 +679,7 @@ def good_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mag
     press_any_key()
 
     print()
-    print(party[1].get_name() + ":")
-    print(' - Can we have the map then? Maybe it will help lead us back home.')
-    press_any_key()
+    dialog(party[1],' - Can we have the map then? Maybe it will help lead us back home.')
 
     print('Bartender - Yes, but there’s a catch… The prophecy warns of the duality of time\n'
           'and how things can be different throughout time’s flow. It says that those from\n'
@@ -833,9 +693,7 @@ def good_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mag
     press_any_key()
 
     print()
-    print(party[0].get_name() + ":")
-    print(' - A cave huh? Sounds easy enough.')
-    press_any_key()
+    dialog(party[0],' - A cave huh? Sounds easy enough.')
 
     print("Bartender - It isn’t actually. Otherwise I would’ve retrieved the stone myself long\n"
           "ago. There are monsters there and I’d rather not risk my life for it. But I’ll lend\n"
@@ -844,8 +702,7 @@ def good_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mag
     press_any_key()
 
     print()
-    print(party[2].get_name() + ":")
-    print(' - Sounds good.')
+    dialog(party[2],' - Sounds good.')
 
     equip_initial_armor(player)
 
@@ -863,16 +720,13 @@ def good_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mag
     press_any_key()
 
     print()
-    print(party[1].get_name() + ":")
-    print(' - Hey Look, A Chest!')
-    press_any_key()
+    dialog(party[1],' - Hey Look, A Chest!')
 
     print('At that moment, a monster leaped out and attacks')
     press_any_key()
 
     print()
-    print(party[0].get_name() + ":")
-    print(' - WHOA!')
+    dialog(party[0],' - WHOA!')
 
     press_any_key()
 
@@ -883,17 +737,14 @@ def good_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mag
 
 
     print()
-    print(player.get_name() + ":")
-    print(' - Grab The Stone! Quick!')
-    press_any_key()
+    dialog(player,' - Grab The Stone! Quick!')
 
     print('The Party grabs the stone and escapes the cave as it collapses\n'
           'They then return to the bartender.')
     press_any_key()
 
     print()
-    print(party[2].get_name() + ":")
-    print(' - We got it!')
+    dialog(party[2],' - We got it!')
 
     print('Bartender - Great job heroes! I knew you could do it. Here.')
     press_any_key()
@@ -902,18 +753,14 @@ def good_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mag
     press_any_key()
 
     print()
-    print(player.get_name() + ":")
-    print(' - Sweet!, Now what?')
-    press_any_key()
+    dialog(player,' - Sweet!, Now what?')
 
     print('Bartender - I would recommend going to see the King! He should\n'
           'be able to help you get to where you need to be.')
     press_any_key()
 
     print()
-    print(party[1].get_name() + ":")
-    print(" - Alright, just point us in the right direction and we'll be on our way.")
-    press_any_key()
+    dialog(party[1]," - Alright, just point us in the right direction and we'll be on our way.")
 
     print('And with that, our Heroes journey began...')
 
@@ -924,31 +771,31 @@ def good_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mag
 
 def bad_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mage_and_black_mage, red_mage_and_white_mage):
     print()
-    print(party[0].get_name() + ":")
-    print(' - Sounds good to me.')
+    dialog(party[0],' - Sounds good to me.')
 
     print('Fislyo - GOOD… GOOD. NOW, YOUR FIRST TASK IS TO GO TO THE\n'
           'NEARBY TAVERN AND FIND AN ANCIENT MAP. YOU MUST GET IT BY\n'
           'ANY MEANS NECESSARY.')
 
+    press_any_key()
+
     print()
-    print(party[1].get_name() + ":")
-    print(' - Wait, they aren’t just gonna give it to us?')
+    dialog(party[1],' - Wait, they aren’t just gonna give it to us?')
 
     print(' - NO, THE MEN HERE ARE STUBBORN AND VIOLENT!')
 
     print()
-    print(player.get_name() + ":")
-    print(' - Great, so we have to start a bar fight in order to get\n'
+    dialog(player,' - Great, so we have to start a bar fight in order to get\n'
           'this map… that sounds like a good idea')
 
     print('Fislyo - JUST GET IT DONE')
 
+    press_any_key()
+
     print('Fislyo leaves')
 
     print()
-    print(party[2].get_name() + ":")
-    print(' - Guess we better get going then.')
+    dialog(party[2],' - Guess we better get going then.')
 
     print('The Party sets out for the Tavern.')
 
@@ -962,56 +809,44 @@ def bad_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mage
 
     if warrior_and_dragoon:
 
-        print_name(party, Playable_Characters.dragoon)
-        print(' - Looks like we’re lucky I was wearing this armor. You must\n'
+        dialog(Playable_Characters.dragoon,' - Looks like we’re lucky I was wearing this armor. You must\n'
               'look strange to everyone wearing your street clothes.')
 
-        print_name(party, Playable_Characters.warrior)
-        print(' - I didn’t think I’d ever say this, but I actually agree with\n'
+        dialog(Playable_Characters.warrior,' - I didn’t think I’d ever say this, but I actually agree with\n'
               'you. I didn’t like the look that the bartender was giving us.')
 
-        print_name(party, Playable_Characters.dragoon)
-        print(' - Yeah. Well I suppose this is as good a time as any: If you\n'
+        dialog(Playable_Characters.dragoon,' - Yeah. Well I suppose this is as good a time as any: If you\n'
               'want information in the past, who do you talk to?')
 
-        print_name(party, Playable_Characters.warrior)
-        print(' - You’re quizzing me? Now? If you’re gonna do that, you’ll\n'
+        dialog(Playable_Characters.warrior,' - You’re quizzing me? Now? If you’re gonna do that, you’ll\n'
               'have to ask a harder question than that, old man. The answer\n'
               'is the bartender.')
 
-        print_name(party, Playable_Characters.dragoon)
-        print(' - I was just kidding. But where did you get that answer from?')
+        dialog(Playable_Characters.dragoon,' - I was just kidding. But where did you get that answer from?')
 
-        print_name(party, Playable_Characters.warrior)
-        print(' - You don’t know? It’s in, like, every RPG ever.')
+        dialog(Playable_Characters.warrior,' - You don’t know? It’s in, like, every RPG ever.')
 
-        print_name(party, Playable_Characters.dragoon)
-        print('Of course… Well, either way, we should still go talk to him,\n'
+        dialog(Playable_Characters.dragoon,'Of course… Well, either way, we should still go talk to him,\n'
               'he might know something.')
 
     # IF PARTYMEMBERS 1-4 ARE BERSERKER AND THIEF
 
     if berserker_and_thief:
 
-        print_name(party, Playable_Characters.thief)
-        print(" - Look at all the people…! I’ll bet they're loaded!")
+        dialog(Playable_Characters.thief," - Look at all the people…! I’ll bet they're loaded!")
 
-        print_name(party, Playable_Characters.berserker)
-        print(' - Get a hold of yourself buddy. Remember the saying?')
+        dialog(Playable_Characters.berserker,' - Get a hold of yourself buddy. Remember the saying?')
 
-        print_name(party, Playable_Characters.dragoon)
-        print(' - *sighs. Let my hands roam and I’ll be fined out of house\n'
+        dialog(Playable_Characters.thief,' - *sighs. Let my hands roam and I’ll be fined out of house\n'
               'and home. Keep them close and I’ll make no foes. Do not let\n'
               'the urge guide. Let it go. Let it slide. I do not steal for\n'
               'that self is not real.\n'
               '...\n'
               'It feels Cheesy')
 
-        print_name(party, Playable_Characters.berserker)
-        print(' - We’ll bring it up in the next meeting then.')
+        dialog(Playable_Characters.berserker,' - We’ll bring it up in the next meeting then.')
 
-        print_name(party, Playable_Characters.dragoon)
-        print(' - If we can even get out of this mess. Anyway, let’s go talk\n'
+        dialog(Playable_Characters.dragoon,' - If we can even get out of this mess. Anyway, let’s go talk\n'
               'to the bartender. You know as much as I do that the guy running\n'
               'this place will have information.')
 
@@ -1019,72 +854,58 @@ def bad_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mage
 
     if blue_mage_and_black_mage:
 
-        print_name(party, Playable_Characters.black_mage)
-        print(' - You know what’s always confused me?')
+        dialog(Playable_Characters.black_mage,' - You know what’s always confused me?')
 
-        print_name(party, Playable_Characters.blue_mage)
-        print(' - How people can be perfectly healthy without eating meat?')
+        dialog(Playable_Characters.blue_mage,' - How people can be perfectly healthy without eating meat?')
 
-        print_name(party, Playable_Characters.black_mage)
-        print(' - Now is not the time for that. It’s that no matter how much\n'
+        dialog(Playable_Characters.black_mage,' - Now is not the time for that. It’s that no matter how much\n'
               'we may study science, bartenders just seem to have this strange\n'
               'power of knowing what you want to know and saying what you want to hear.')
 
-        print_name(party, Playable_Characters.blue_mage)
-        print(" - Actually it’s because they're in a place where all sorts of\n"
+        dialog(Playable_Characters.blue_mage," - Actually it’s because they're in a place where all sorts of\n"
               "people gather. It’s not rocket science.")
 
-        print_name(party, Playable_Characters.black_mage)
-        print(' - Do you always have to take everything so seriously?')
+        dialog(Playable_Characters.black_mage,' - Do you always have to take everything so seriously?')
 
-        print_name(party, Playable_Characters.black_mage)
-        print(' - Considering our situation, we should be.')
+        dialog(Playable_Characters.black_mage,' - Considering our situation, we should be.')
 
     # IF PARTYMEMBERS 1-4 ARE RED AND WHITE MAGE
 
     if red_mage_and_white_mage:
 
-        print_name(party, Playable_Characters.white_mage)
-        print(' - I always feel bad for bartenders.')
+        dialog(Playable_Characters.white_mage,' - I always feel bad for bartenders.')
 
-        print_name(party, Playable_Characters.red_mage)
-        print(' - Why’s that?')
+        dialog(Playable_Characters.red_mage,' - Why’s that?')
 
-        print_name(party, Playable_Characters.white_mage)
-        print(' - Their work hours must be exhausting.')
+        dialog(Playable_Characters.white_mage,' - Their work hours must be exhausting.')
 
-        print_name(party, Playable_Characters.red_mage)
-        print(' - Any more exhausting than ours?')
+        dialog(Playable_Characters.red_mage,' - Any more exhausting than ours?')
 
-        print_name(party, Playable_Characters.white_mage)
-        print(' - That’s a good point.')
+        dialog(Playable_Characters.white_mage,' - That’s a good point.')
 
-        print_name(party, Playable_Characters.red_mage)
-        print(' - He might know something that can help us. Let’s go ask him.')
+        dialog(Playable_Characters.red_mage,' - He might know something that can help us. Let’s go ask him.')
 
-        print_name(party, Playable_Characters.white_mage)
-        print(' - Alright, lead the way.')
+        dialog(Playable_Characters.white_mage,' - Alright, lead the way.')
 
     # END OF RELATIONSHIP DIALOGUE
 
     print('The party approaches the bartender. He looks again at everyone\n'
           'suspiciously and with great concern.')
 
+    press_any_key()
+
     print('Bartender - You folks new around here? I’d recommend the imported\n'
           'liquor; it’s our best drink.')
 
-    print(party[1].get_name() + ":")
-    print(' - Oh, we’re not here for drinks.')
+    dialog(party[1],' - Oh, we’re not here for drinks.')
 
-    print(player.get_name() + ":")
-    print(' - We need information. And we need it fast-- we don’t have neither\n'
+    dialog(player,' - We need information. And we need it fast-- we don’t have neither\n'
           'the time nor the energy to waste on useless conversations.')
 
-    print(party[1].get_name() + ":")
-    print(' - Aw, but I wanted a drink!')
 
-    print(party[2].get_name() + ":")
-    print(' - Me too… but, we have to stay focused. The more time we waste, the\n'
+    dialog(party[1],' - Aw, but I wanted a drink!')
+
+    dialog(party[2],' - Me too… but, we have to stay focused. The more time we waste, the\n'
           'longer we’re stuck here.')
 
     print('Bartender - So, what, you just barge in here and demand information,\n'
@@ -1094,23 +915,24 @@ def bad_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mage
     print('The bartender’s gaze sharpens, as he warily moves his hand to one of\n'
           'the knives under the counter.')
 
-    print(player[2].get_name() + ":")
-    print(' - Let this be your first warning; I don’t like repeating myself. We’re\n'
+    press_any_key()
+
+    dialog(player,' - Let this be your first warning; I don’t like repeating myself. We’re\n'
           'here for information. You seem like the only person around here who might\n'
           'have some idea what’s going on.')
 
     print('The bartender moves his hand away from the knife, without the party seeing.')
 
-    print(party[2].get_name() + ":")
-    print(' - There’s no simple way to say this, so listen carefully; We’re from the\n'
+    dialog(party[2],' - There’s no simple way to say this, so listen carefully; We’re from the\n'
           'future. We were brought back to the past by some sort of rift. Some sort of\n'
           'creature, apparently named Fislyo, asked us to help him find something called\n'
           'the Hell Cube.')
 
     print('The bartender emits a long sigh.')
 
-    print(player[2].get_name() + ":")
-    print(' - Do you know anything about the Hell Cube?')
+    press_any_key()
+
+    dialog(player,' - Do you know anything about the Hell Cube?')
 
     print('The bartender is silent for a moment. Then, he nods silently and gestures\n'
           'towards the back room. The party follows him into the dimly lit room. The\n'
@@ -1118,62 +940,77 @@ def bad_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mage
           'of a bygone era, waiting to be used. Another, with 8 distinct sets of armor.\n'
           'It seems almost perfect. There is another moment of silence.')
 
+    press_any_key()
+
     print('Bartender - You’re lucky, you know. If you had talked to anybody else,\n'
           "they wouldn't have believed you. But I do. There has been a prophecy known\n"
           'across the land for generations, but it has been mostly forgotten. Yet my\n'
           'family knew of this prophecy and waited for that time to come. Never did I\n'
           'think I’d see the prophecy come true, and yet, here you are.')
 
-    print(player[2].get_name() + ":")
-    print(' - How did your family know for certain that there was a prophecy?')
+    press_any_key()
+
+    dialog(player,' - How did your family know for certain that there was a prophecy?')
 
     print(' - Because of this.')
+
+    press_any_key()
 
     print('The bartender opens a small chest that was hidden amongst some larger crates\n'
           'and takes out a rolled up sheet of parchment.')
 
+    press_any_key()
+
     print('Bartender - The prophecy told of a map that would help guide those from the future. This…')
+    print()
 
     print('The bartender unrolls that parchment.')
+    print()
 
     print('Bartender - ...is that map. There are all these weird symbols on it that no one\n'
           'has been able to make out. And amidst those symbols is what appears to be some\n'
           'strange looking box. I’m willing to bet that that is the hell cube you speak of.\n'
           'Huh? What the…?')
 
+    press_any_key()
+
     print('The map begins to glow a dark blood colored glow, and the symbols start moving\n'
           'on the parchment.')
 
+    press_any_key()
+
     print('Bartender - That’s never happened before. This must be in response to your arrival.')
 
-    print(party[1].get_name() + ":")
-    print(' - Wonderful. We’ll be taking that, then.')
+    press_any_key()
+    dialog(party[1],' - Wonderful. We’ll be taking that, then.')
 
     print('Bartender - I can’t just give this away, there’s a catch! The prophecy warns\n'
           'of the duality of time and how things can be different throughout time’s flow…\n'
           'It says that those from the future need to be tested first lest they ruin the\n'
           'world. For obvious reasons, we don’t want that… right?')
 
-    print(party[2].get_name() + ":")
-    print(' - … Right, sure.')
+    press_any_key()
+
+    dialog(party[2],' - … Right, sure.')
 
     print('Bartender - So; the prophecy mentions a magical stone in a cave not far from\n'
           'here. Only those who wish to not harm others can touch it. Those who don’t care\n'
           'about harming others will get hurt by the stone. If you bring me that stone and\n'
           'all of you pass it’s test, then I will give you the map.')
 
-    print(player.get_name() + ":")
-    print(' - Yeah, I think we’ll be skipping that stone. We told you to be fast, and here\n'
+    dialog(player,' - Yeah, I think we’ll be skipping that stone. We told you to be fast, and here\n'
           'you are trying to send us on a side quest. The way I see it; why should we get you\n'
           'your stone when the map is right here? It’d be just as easy…')
 
     print('The bartender draws his knife')
+    print()
 
     print('Bartender - Don’t you dare. I’ve been protecting this map and this prophecy for\n'
           '57 years, and I’m not going to have it ruined by some ruffians like you!')
 
-    print(party[2].get_name() + ":")
-    print(' - Well, that’s a real shame then, isn’t it?')
+    press_any_key()
+
+    dialog(party[2],' - Well, that’s a real shame then, isn’t it?')
 
     print('The rest of the party draws the weapons and armor from nearby stands in the back room')
 
@@ -1185,33 +1022,37 @@ def bad_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mage
     print("ALL PARTY MEMBERS HAVE BEEN EQUIPPED WITH LEATHER ARMOR AND A KNIFE")
 
     print(party[0].get_name() + ":")
-    print(' - Because we’re not standing down.')
+    dialog(party[0],' - Because we’re not standing down.')
+    #love this part
 
-    print(party[1].get_name() + ":")
-    print(' - Because we have a goal.')
 
-    print(player.get_name() + ":")
-    print(' - And you’re in our way.')
+    dialog(party[1],' - Because we have a goal.')
+
+    dialog(player,' - And you’re in our way.')
 
     print('The bartender looks panicked, clearly outnumbered and surrounded by the party.')
+
+    press_any_key()
 
     print('Bartender - HELP!!!')
 
     print('The bar’s 3 bouncers rush into the back room and see the commotion unfolding.\n'
           'They draw their weapons.')
 
+    press_any_key()
+
     do_battle(player, enemy_list)
 
     # AFTER THEY WIN THE FIGHT
 
-    print(party[1].get_name() + ":")
-    print('Grab the map! Quick!')
+    dialog(party[1],'Grab the map! Quick!')
 
     print('The Party leaves the bar through a window with the map in hand. They see a castle\n'
           'in the distance.')
 
-    print(player.get_name() + ":")
-    print("Let's see if we can go and swindle whoever lives in that castle into giving us some\n"
+    press_any_key()
+
+    dialog(player,"Let's see if we can go and swindle whoever lives in that castle into giving us some\n"
           "better stuff, maybe even figure out where we need to go next.")
 
     print('And with that, our villains became determined to get home, no matter the cost.\n')
