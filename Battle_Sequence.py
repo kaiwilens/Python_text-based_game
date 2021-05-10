@@ -20,6 +20,7 @@ def do_battle(character, enemies):
         for enemy in enemies:
             enemyHealth = enemy.get_health()
             if not enemyHealth:
+                enemies.pop(0)
                 continue
 
             print(enemy.get_description())
@@ -52,8 +53,7 @@ def do_battle(character, enemies):
             enemyHealth = enemy.get_health()
             if not enemyHealth:
                 print("Enemy destroyed!")
-                return True
-               # continue
+                continue
             # Enemy attack YOU
             character.reduce_health(enemy.get_damage())
             if not character.get_health():
@@ -61,3 +61,17 @@ def do_battle(character, enemies):
                 return False
     print("ALL ENEMIES DESTROYED!")
     return True
+
+def do_battle_list(player, raw_enemies):
+    enemies=[]
+    for e in raw_enemies:
+        enemies.append(e())
+    do_battle(player, enemies)
+#do_battle_list(god, enemy_list)
+
+def do_battle_single(player, enemy, count):
+    enemies=[]
+    for i in range(1,count):
+        enemies.append(enemy())
+    do_battle(player, enemies)
+

@@ -1,4 +1,4 @@
-from Battle_Sequence import do_battle
+from Battle_Sequence import *
 from Characters import Character, Occupations
 from Enemy_Characters import *
 from Playable_Characters import playable_characters
@@ -730,8 +730,8 @@ def good_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mag
 
     press_any_key()
 
-    do_battle(player, enemy_list)
-    do_battle(party[0], spider_list)
+    do_battle_list(player, enemy_list)
+    do_battle_list(party[0], spider_list)
 
     # After beating the monster
 
@@ -1041,7 +1041,7 @@ def bad_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mage
 
     press_any_key()
 
-    do_battle(player, enemy_list)
+    do_battle_single(player, Bouncer, 3)
 
     # AFTER THEY WIN THE FIGHT
 
