@@ -1020,8 +1020,8 @@ def bad_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mage
         equip_initial_armor(person)
 
     print("ALL PARTY MEMBERS HAVE BEEN EQUIPPED WITH LEATHER ARMOR AND A KNIFE")
+    press_any_key()
 
-    print(party[0].get_name() + ":")
     dialog(party[0],' - Because we’re not standing down.')
     #love this part
 
