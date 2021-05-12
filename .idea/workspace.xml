@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5bc85a1c-b20c-41b9-bc7e-bcbbbf6649a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Battle_Sequence.py" beforeDir="false" afterPath="$PROJECT_DIR$/Battle_Sequence.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character_Helper_Functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Character_Helper_Functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Characters.py" beforeDir="false" afterPath="$PROJECT_DIR$/Characters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enemies.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enemies.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enemy_Characters.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy_Characters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPC.py" beforeDir="false" afterPath="$PROJECT_DIR$/NPC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Playable_Characters.py" beforeDir="false" afterPath="$PROJECT_DIR$/Playable_Characters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Story.py" beforeDir="false" afterPath="$PROJECT_DIR$/Story.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +36,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="G:/01 STUFF TO USE/CURRENT COURSES/Network Programming/Projects/Tatro - Lab10 Magic 8 Ball" />
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="Character_Helper_Functions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
