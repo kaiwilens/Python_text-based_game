@@ -302,7 +302,7 @@ class Character(NPC.NPC):
 
             total_health = self.get_health() - health_reduction
 
-            if total_health <= 0:
+            if total_health < 1:
                 self.__is_alive = False
                 self.set_health(0)
 
