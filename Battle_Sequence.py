@@ -1,15 +1,27 @@
 import Characters
 import Enemies
+import Inventory
+import enum
 import random
-options = [
-    "strike",
-    "inventory",
-    "retreat",
-]
 
+class return_options(enum.Enum):
+    victory = 0
+    defeat = 1
+    retreat = 2
 
 
 def single_battle(characters, character, enemy):
+    """Fight a single enemy
+
+    This code is used for a single character to fight a single enemy.
+    The function ends once the enemy or the character is dead. If the character
+    dies they will be removed from the party list.
+
+    :param characters: List that contains the players party
+    :param character: The character that will be fighting
+    :param enemy: The enemy the character will fight
+    :return: breaks out of battle if all characters are dead
+    """
     print(enemy.get_description())
 
     # characters = list(characters)
@@ -58,10 +70,23 @@ def single_battle(characters, character, enemy):
         characters.remove(character)
 
 
-def multiple_enemies_battle(characters, enemy, num_enemies):
+
+def same_enemy_battle(characters, enemy, num_enemies, retreat_option = True):
+    """Fight numerous enemies
+
+    This code is used for the characters to fight numerous enemies.
+    The function cycles through the characters list making them fight
+    until all enemies or all characters are dead. If a character
+    dies they will be removed from the party list.
+
+    :param characters: List that contains the players party
+    :param enemy: The enemy the character will fight
+    :param num_enemies: The number of enemies the characters will need to fight.
+    :return: breaks out of battle if all characters are dead
+    """
     print(enemy.get_description())
 
-    while num_enemies > 0:
+    while True:
         for character in characters:
             while character.get_is_alive() and enemy.get_is_alive():
                 character.hub()
@@ -72,8 +97,10 @@ def multiple_enemies_battle(characters, enemy, num_enemies):
                 while not valid_input:
 
                     print("1: Attack")
-                    print("2: Retreat")
-                    print("3: Inventory")
+                    print("2: Inventory")
+
+                    if retreat_option:
+                        print("3: Retreat")
 
                     selection = input()
 
@@ -86,10 +113,14 @@ def multiple_enemies_battle(characters, enemy, num_enemies):
                             valid_input = True
 
                         elif int_selection == 2:
-                            print("Retreat")
+                            Inventory.main_inventory(characters)
 
                         elif int_selection == 3:
-                            print("Inventory")
+                            if retreat_option:
+                                return return_options.retreat
+
+                            else:
+                                print("Invalid Selection")
 
                         else:
                             print("Invalid Selection")
@@ -103,17 +134,31 @@ def multiple_enemies_battle(characters, enemy, num_enemies):
                 print(enemy.get_name(), "has been defeated")
                 enemy.set_is_alive(True)
                 num_enemies = num_enemies - 1
+                if num_enemies == 0:
+                    return return_options.victory
 
 
             else:
                 characters.remove(character)
                 print(character.get_name(), "is dead")
                 if not len(characters):
-                    return
+                    return return_options.defeat
 
-def random_enemies_battle(characters, enemies, num_enemies):
+def random_enemies_battle(characters, enemies, num_enemies, retreat_option = True):
+    """Fight numerous random enemies
+
+    This code is used for the characters to fight numerous random enemies.
+    The function cycles through the characters list making them fight random enemies
+    until all enemies or all characters are dead. If a character
+    dies they will be removed from the party list.
+
+    :param characters: List that contains the players party
+    :param enemis: List that contains the possible enemies the characters will fight
+    :param num_enemies: The number of enemies the characters will need to fight.
+    :return: breaks out of battle if all characters are dead
+    """
     max_int = len(enemies) - 1
-    while num_enemies > 0:
+    while True:
 
         index = random.randint(0, max_int)
 
@@ -126,11 +171,17 @@ def random_enemies_battle(characters, enemies, num_enemies):
 
                 valid_input = False
 
+                num_options = 2
+                if retreat_option:
+                    num_options += 1
+
                 while not valid_input:
 
                     print("1: Attack")
-                    print("2: Retreat")
-                    print("3: Inventory")
+                    print("2: Inventory")
+
+                    if retreat_option:
+                        print("3: Retreat")
 
                     selection = input()
 
@@ -143,16 +194,20 @@ def random_enemies_battle(characters, enemies, num_enemies):
                             valid_input = True
 
                         elif int_selection == 2:
-                            print("Retreat")
+                            Inventory.main_inventory(characters)
 
                         elif int_selection == 3:
-                            print("Inventory")
+                            if retreat_option:
+                                return return_options.retreat
+
+                            else:
+                                print("Invalid Selection")
 
                         else:
                             print("Invalid Selection")
 
 
-                    except:
+                    except ValueError:
                         print("Invalid Selection")
                         print()
 
@@ -160,6 +215,8 @@ def random_enemies_battle(characters, enemies, num_enemies):
                 print(enemy.get_name(), "has been defeated")
                 enemy.set_is_alive(True)
                 num_enemies -= 1
+                if num_enemies == 0:
+                    return return_options.victory
                 break
 
 
@@ -167,65 +224,6 @@ def random_enemies_battle(characters, enemies, num_enemies):
                 characters.remove(character)
                 print(character.get_name(), "is dead")
                 if not len(characters):
-                    return
+                    return return_options.defeat
 
 
-
-"""
-def do_battle(character, enemies):
-    """
-"""
-    Used to battle enemies.
-
-    :param enemies: A list of enemies.
-    The function does stuff.
-
-    # Battle each enemy
-    in_battle = True
-    while True:
-        if not len(enemies):
-            break
-        for enemy in enemies:
-            enemyHealth = enemy.get_health()
-            if not enemyHealth:
-                continue
-
-            print(enemy.get_description())
-            while True:
-                try:
-                    print(str(character.hub()) + "   " + str(enemy.hub()))
-                    print("Your health:", character.get_health())
-                    print("Enemy health:", enemyHealth)
-                    for i in range(0, len(options)):
-                        print("(%i) %s" % (i + 1, options[i]))
-                    option_id = int(input("Pick an option: "))
-                    # Check if good option
-                    if option_id > 0 and option_id <= len(options):
-                        break
-                    print("Error: Input must be between 1-%i." % len(options))
-                except ValueError:
-                    print("Error: Input must be a number.")
-            option = options[option_id - 1]
-            # Do stuff based on option
-            if option == "strike":
-                enemy.set_health(enemyHealth - character.get_damage())
-                print("<<<!!!>>>")
-            elif option == "inventory":
-                print("Inventory")
-                # add code for inventory here
-            elif option == "retreat":
-                print("Retreating")
-                return True
-            # Check if enemy is still alive
-            enemyHealth = enemy.get_health()
-            if not enemyHealth:
-                print("Enemy destroyed!")
-                return True
-               # continue
-            # Enemy attack YOU
-            character.reduce_health(enemy.get_damage())
-            if not character.get_health():
-                print("You died!")
-                return False
-    print("ALL ENEMIES DESTROYED!")
-    return True"""

@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bc85a1c-b20c-41b9-bc7e-bcbbbf6649a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Battle_Tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Inventory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Armor_Weapons_Class.py" beforeDir="false" afterPath="$PROJECT_DIR$/Armor_Weapons_Class.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Battle_Sequence.py" beforeDir="false" afterPath="$PROJECT_DIR$/Battle_Sequence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Battle_Tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Battle_Tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Characters.py" beforeDir="false" afterPath="$PROJECT_DIR$/Characters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enemies.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enemies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Story.py" beforeDir="false" afterPath="$PROJECT_DIR$/Story.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usable_Armor_Weapons.py" beforeDir="false" afterPath="$PROJECT_DIR$/Usable_Armor_Weapons.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -212,6 +212,7 @@ def game_story():
 
 
     party = create_party(player)
+    party.insert(0, player)
 
     warrior_present = in_party(party, Playable_Characters.warrior, player)
     berserker_present = in_party(party, Playable_Characters.berserker, player)
@@ -846,8 +847,6 @@ def good_story(party, player, warrior_and_dragoon, berserker_and_thief, blue_mag
     print()
     print(party[2].get_name() + ":")
     print(' - Sounds good.')
-
-    equip_initial_armor(player)
 
     for person in party:
         equip_initial_armor(person)

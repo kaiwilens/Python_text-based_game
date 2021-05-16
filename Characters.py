@@ -59,7 +59,7 @@ class Character(NPC.NPC):
 
     def hub(self):
         info_panel = "NAME: " + str(self.get_name()) + "   LEVEL: " + str(self.get_level()) + "   HP: " + str(self.get_health()) + "/" + str(self.get_max_health()) + \
-                     "   WEAPON: " + str(self.get_equipped_weapon()) + \
+                     "   WEAPON: " + str(self.get_equipped_weapon_name()) + \
                      "   DMG: " + str(self.get_damage()) + "   DEF: " + str(self.get_defense()) + \
                      "   XP: " + str(self.get_experience()) + "/" + str(self.get_experience_req())
         border = "-" * len(info_panel)
@@ -67,7 +67,7 @@ class Character(NPC.NPC):
         print(border)
         print(info_panel)
         print(border)
-        print()
+
 
     def get_damage(self):
         return NPC.NPC.get_damage(self) + self.__equipped_weapon.get_damage()
@@ -182,8 +182,11 @@ class Character(NPC.NPC):
                 self.__head = armor
 
 
-    def get_equipped_weapon(self):
+    def get_equipped_weapon_name(self):
         return self.__equipped_weapon.get_name()
+
+    def get_equipped_weapon(self):
+        return self.__equipped_weapon
 
     def get_head_armor(self):
         return self.__head.get_name()

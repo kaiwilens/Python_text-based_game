@@ -36,3 +36,5 @@ leather_chaps = Armor_Weapons_Class.Armor("Leather Chaps", "Legs", 0, 0, 0, 0, 2
 leather_chest = Armor_Weapons_Class.Armor("Leather Chest", "Chest", 0, 0, 0, 0, 3)
 leather_boots = Armor_Weapons_Class.Armor("Leather Boots", "Feet", 0, 0, 0, 0, 1)
 
+iron_helm = Armor_Weapons_Class.Armor("Iron Helm", "Head", 10, 0, 5, 0, 10)
+
